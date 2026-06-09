@@ -1,0 +1,22 @@
+[project]
+name = "fastapi-task-api"
+version = "1.0.0"
+description = "A production-structured Task Management REST API built with FastAPI."
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+# pycodestyle (E/W), pyflakes (F), isort (I), flake8-bugbear (B), pyupgrade (UP)
+select = ["E", "W", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+# Silence a third-party DeprecationWarning: passlib 1.7.4 imports the stdlib
+# `crypt` module, which is deprecated on Python 3.12. Not our code.
+filterwarnings = [
+    "ignore:'crypt' is deprecated.*:DeprecationWarning",
+]

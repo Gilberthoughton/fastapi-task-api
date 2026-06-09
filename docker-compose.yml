@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    container_name: task-api
+    ports:
+      - "8000:8000"
+    environment:
+      # Override these via a .env file or your orchestrator in real deployments.
+      PROJECT_NAME: "Task Management API"
+      SECRET_KEY: "change-me-to-a-long-random-string"
+      ACCESS_TOKEN_EXPIRE_MINUTES: "60"
+      DATABASE_URL: "sqlite:////data/tasks.db"
+    volumes:
+      # Persist the SQLite database across container restarts.
+      - api-data:/data
+    restart: unless-stopped
+
+volumes:
+  api-data:
