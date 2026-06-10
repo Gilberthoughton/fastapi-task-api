@@ -9,7 +9,7 @@ passlib[bcrypt]==1.7.4
 # (raises "password cannot be longer than 72 bytes" / version-detection errors).
 bcrypt==4.0.1
 python-multipart==0.0.9
-email-validator==2.1.1
+email-validator==2.3.0
 
 # Dev / test
 pytest==8.2.2
