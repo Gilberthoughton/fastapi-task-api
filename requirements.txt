@@ -8,7 +8,7 @@ passlib[bcrypt]==1.7.4
 # Pin bcrypt: passlib 1.7.4's backend shim is incompatible with bcrypt >= 4.1
 # (raises "password cannot be longer than 72 bytes" / version-detection errors).
 bcrypt==4.0.1
-python-multipart==0.0.9
+python-multipart==0.0.32
 email-validator==2.1.1
 
 # Dev / test
